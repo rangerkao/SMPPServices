@@ -282,8 +282,8 @@ public class SmppServiceImplementation implements SmppServiceInterface{
 				ps.close();
 			}catch(Exception e){
 			}
-			return r;
 		}
+		return r;
 	}
 	private int insertRequestHead(String uid, String msgid,String orgcode,int counts,String remark) {
 		String sql="insert into messages (userid,msgid,createtime,orgcode,itemcount,remark) values(?,?,?,?,?,?)";
@@ -312,9 +312,9 @@ public class SmppServiceImplementation implements SmppServiceInterface{
 			try{
 				ps.close();
 			}catch(Exception e){
-			}
-			return result;
+			}	
 		}
+		return result;
 	}
  	private int insertRequest(String msgid,int seq, String s,String phone,String msg) {
       String sql="insert into msgitem (msgid,seq,schedule,phoneno,msgbody,tries,status) values(?,?,?,?,?,0,0)";
@@ -342,7 +342,7 @@ public class SmppServiceImplementation implements SmppServiceInterface{
           ps.close();
         }catch(Exception e){
         }
-        return result;
       }
+      return result;
   }
 }
