@@ -121,19 +121,22 @@ public class SmppServiceImplementation implements SmppServiceInterface{
 													break;
 												}
 												try{
-													if (year>Integer.parseInt(d[0])){
+													/*if (year>Integer.parseInt(d[0])){
 														r=-4;//早於發送日期
-													}
+													}else
 													if (month>Integer.parseInt(d[1])){
 														r=-4;//早於發送日期
-													}
+													}else
 													if (day>Integer.parseInt(d[2])){
 														r=-4;//早於發送日期
-													}
+													}else
 													if (hour>Integer.parseInt(h[0])){
 														r=-4;//早於發送日期
-													}
+													}else
 													if (minute>Integer.parseInt(h[1])){
+														r=-4;//早於發送日期
+													}*/
+													if(now.getTime().after(new SimpleDateFormat("yyyyMMddHHmm").parse(d[0]+d[1]+d[2]+h[0]+h[1]))){
 														r=-4;//早於發送日期
 													}
 												}catch(Exception e){
